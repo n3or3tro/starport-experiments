@@ -1,0 +1,11 @@
+[package]
+name = "xor_obfuscator"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+crate-type = ["dynlib"]
+[dependencies]
+# don't really want the 10 dependancies that rand comes with
+# rand = {version="0.8.5"}

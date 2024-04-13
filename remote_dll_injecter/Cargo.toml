@@ -1,0 +1,22 @@
+[package]
+name = "remote_dll_injecter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+widestring = "1.0.2"
+dll_stuff = { path = "../dll_stuff" }
+
+[dependencies.windows]
+version = "0.54"
+features = [
+    # "Win32_System_LibraryLoader",
+    "Win32_System_Memory",
+    "Win32_System_Threading",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_LibraryLoader",
+    # "Win32_Globalization",
+    # We need this security module to use CreateThread for some reason.
+    "Win32_Security",
+]

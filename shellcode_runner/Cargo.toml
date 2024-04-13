@@ -1,0 +1,19 @@
+[package]
+name = "shellcode_injecter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libc = "0.2.153"
+xor_obfuscator = { path = "../xor_obfuscator" }
+
+[dependencies.windows]
+version = "0.54"
+features = [
+    "Win32_System_LibraryLoader",
+    "Win32_System_Threading",
+    "Win32_System_Memory",
+    "Win32_Globalization",
+    # We need this security module to use CreateThread for some reason.
+    "Win32_Security",
+]
